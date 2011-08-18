@@ -2,7 +2,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.cellfish.mediadb</groupId>
 	<artifactId>mobile-account</artifactId>
-	<version>0.0.1</version>
+	<version>0.0.2-SNAPSHOT</version>
 	<name>mobile-account</name>
 	<packaging>war</packaging>
 
