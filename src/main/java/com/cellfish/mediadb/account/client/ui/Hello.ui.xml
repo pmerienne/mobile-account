@@ -1,0 +1,16 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder" xmlns:jqm='urn:import:com.google.gwt.jquery.mobile.ui'
+	xmlns:g="urn:import:com.google.gwt.user.client.ui">
+	<ui:style>
+		
+	</ui:style>
+	<g:HTMLPanel>
+		<jqm:Page dataTheme="c">
+			<jqm:HeaderBar ui:field="header" text="Hello Mediadb" />
+
+			<jqm:Content>
+				<g:Label ui:field="helloLabel" />
+			</jqm:Content>
+		</jqm:Page>
+	</g:HTMLPanel>
+</ui:UiBinder> 

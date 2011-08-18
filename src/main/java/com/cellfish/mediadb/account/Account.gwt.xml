@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE module PUBLIC "-//Google Inc.//DTD Google Web Toolkit 2.3.0//EN" "http://google-web-toolkit.googlecode.com/svn/tags/2.3.0/distro-source/core/src/gwt-module.dtd">
+<module rename-to="Account">
+	<!-- Inherit the core GWT wrapper for Jquery mobile ui. -->
+	<inherits name='com.google.gwt.jquery.mobile.JQueryMobile' />
+
+	<!-- JQuery ui mobile -->
+	<stylesheet src="http://code.jquery.com/mobile/1.0a2/jquery.mobile-1.0a2.min.css" />
+	<script src="http://code.jquery.com/mobile/1.0b1/jquery.mobile-1.0b1.min.js" />
+
+	<!-- Specify the paths for translatable code -->
+	<source path="client" />
+	<source path="shared" />
+
+	<!-- Specify the app entry point class. -->
+	<entry-point class="com.cellfish.mediadb.account.client.Account" />
+</module>

@@ -1,0 +1,29 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder" xmlns:jqm='urn:import:com.google.gwt.jquery.mobile.ui'
+	xmlns:g="urn:import:com.google.gwt.user.client.ui">
+	<ui:style>
+		.error {
+			color: red;
+		}
+	</ui:style>
+	<g:HTMLPanel>
+		<jqm:Page dataTheme="c">
+			<jqm:HeaderBar ui:field="header" text="Login" />
+
+			<jqm:Content>
+				<g:FormPanel ui:field="form">
+					<g:HTMLPanel>
+						<g:Label>E-mail</g:Label>
+						<jqm:TextBox ui:field="emailBox" />
+
+						<g:Label>Password</g:Label>
+						<jqm:TextBox ui:field="passwordBox" />
+						<hr />
+						<jqm:Button ui:field="loginButton" text="Login" rounded="true" active="true"/>
+						<g:Label ui:field="errorLabel" visible="false" styleName="error"/>
+					</g:HTMLPanel>
+				</g:FormPanel>
+			</jqm:Content>
+		</jqm:Page>
+	</g:HTMLPanel>
+</ui:UiBinder> 

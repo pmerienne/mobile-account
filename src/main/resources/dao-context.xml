@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:jpa="http://www.springframework.org/schema/data/jpa"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cloud="http://schema.cloudfoundry.org/spring" xmlns:jdbc="http://www.springframework.org/schema/jdbc"
+	xsi:schemaLocation="http://www.springframework.org/schema/jdbc http://www.springframework.org/schema/jdbc/spring-jdbc-3.0.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+		http://schema.cloudfoundry.org/spring http://schema.cloudfoundry.org/spring/cloudfoundry-spring-0.6.xsd
+		http://www.springframework.org/schema/data/jpa http://www.springframework.org/schema/data/jpa/spring-jpa.xsd">
+
+	<!-- JPA -->
+	<bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
+		<property name="entityManagerFactory" ref="entityManagerFactory" />
+	</bean>
+
+	<bean class="org.springframework.orm.jpa.support.PersistenceAnnotationBeanPostProcessor" />
+
+	<!-- Spring data -->
+	<jpa:repositories base-package="com.cellfish.mediadb.account.server.repositories" />
+
+	<!-- Data source -->
+	<beans profile="default">
+		<bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+			<property name="dataSource" ref="dataSource" />
+			<property name="jpaVendorAdapter">
+				<bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter">
+					<property name="generateDdl" value="true" />
+					<property name="database" value="HSQL" />
+				</bean>
+			</property>
+			<property name="persistenceUnitName" value="cloud-test" />
+		</bean>
+		<jdbc:embedded-database id="dataSource" />
+	</beans>
+
+	<beans profile="cloud">
+		<bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+			<property name="dataSource" ref="dataSource" />
+			<property name="jpaVendorAdapter">
+				<bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter">
+					<property name="generateDdl" value="true" />
+					<property name="database" value="MYSQL" />
+				</bean>
+			</property>
+			<property name="persistenceUnitName" value="cloud-test" />
+		</bean>
+		<cloud:data-source id="dataSource" />
+	</beans>
+
+</beans>
