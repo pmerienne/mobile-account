@@ -20,7 +20,7 @@
 						<jqm:PasswordTextBox ui:field="passwordBox" />
 						<hr />
 						<jqm:Button ui:field="loginButton" text="Login" rounded="true" active="true"/>
-						<g:Label ui:field="errorLabel" visible="false" styleName="error"/>
+						<g:Label ui:field="errorLabel" visible="false" styleName="{style.error}"/>
 					</g:HTMLPanel>
 				</g:FormPanel>
 			</jqm:Content>
