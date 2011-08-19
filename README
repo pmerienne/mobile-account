@@ -2,6 +2,8 @@ Application web pour mobile permettant de partager les comptes de différentes p
 
 Ce projet sert essentiellement de bac à sable pour tester de nouvelles technologies (spring 3.1, spring-data, cloudfoundry et jquery mobile ui).
 
+Déployé actuellement sur http://mobile-account.cloudfoundry.com/
+
 # Compilation
 mvn clean install
 
