@@ -17,7 +17,7 @@
 						<jqm:TextBox ui:field="emailBox" />
 
 						<g:Label>Password</g:Label>
-						<jqm:TextBox ui:field="passwordBox" />
+						<jqm:PasswordTextBox ui:field="passwordBox" />
 						<hr />
 						<jqm:Button ui:field="loginButton" text="Login" rounded="true" active="true"/>
 						<g:Label ui:field="errorLabel" visible="false" styleName="error"/>

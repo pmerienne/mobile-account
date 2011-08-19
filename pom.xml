@@ -18,7 +18,7 @@
 		<maven.compiler.target>1.6</maven.compiler.target>
 		<!-- Dependencies versions -->
 		<gwt.version>2.3.0</gwt.version>
-		<gwt-jquery-ui-mobile.version>0.1.3</gwt-jquery-ui-mobile.version>
+		<gwt-jquery-ui-mobile.version>0.1.4</gwt-jquery-ui-mobile.version>
 		<org.cloudfoundry-version>0.7.1</org.cloudfoundry-version>
 		<org.springframework-version>3.1.0.M2</org.springframework-version>
 		<org.aspectj-version>1.6.11</org.aspectj-version>

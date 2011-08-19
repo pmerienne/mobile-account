@@ -8,6 +8,7 @@ import com.cellfish.mediadb.account.shared.service.UserServiceAsync;
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.shared.EventBus;
+import com.google.gwt.jquery.mobile.ui.PasswordTextBox;
 import com.google.gwt.jquery.mobile.ui.TextBox;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
@@ -32,7 +33,7 @@ public class LoginPage extends Composite {
 	TextBox emailBox;
 
 	@UiField
-	TextBox passwordBox;
+	PasswordTextBox passwordBox;
 
 	@UiField
 	Label errorLabel;

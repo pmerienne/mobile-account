@@ -35,7 +35,7 @@ public class AccountServiceImpl implements AccountService {
 	@Autowired
 	private Mapper mapper;
 
-	public void addBill(BillDTO bill) {
+	public void save(BillDTO bill) {
 		this.billRepository.save(this.mapper.map(bill, Bill.class));
 	}
 
@@ -63,7 +63,7 @@ public class AccountServiceImpl implements AccountService {
 		return this.map(payments, PaymentDTO.class);
 	}
 
-	public void addPayment(PaymentDTO paymentDTO) {
+	public void save(PaymentDTO paymentDTO) {
 		Payment payment = this.mapper.map(paymentDTO, Payment.class);
 		this.paymentRepository.save(payment);
 	}
@@ -74,8 +74,9 @@ public class AccountServiceImpl implements AccountService {
 		return fromValidate && toValidate;
 	}
 
-	public void validate(PaymentDTO payment, UserDTO user) {
-		payment.getPaymentValidation().add(user);
+	public void validate(PaymentDTO paymentDTO, UserDTO user) {
+		Payment payment = this.paymentRepository.findOne(paymentDTO.getId());
+		payment.getPaymentValidation().add(this.mapper.map(user, User.class));
 	}
 
 	public Map<UserDTO, Integer> getAcountBalance(UserDTO userDTO) {

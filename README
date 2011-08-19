@@ -1,0 +1,41 @@
+Application web pour mobile permettant de partager les comptes de différentes personnes.
+
+Ce projet sert essentiellement de bac à sable pour tester de nouvelles technologies (spring 3.1, spring-data, cloudfoundry et jquery mobile ui).
+
+# Compilation
+mvn clean install
+
+# Déploiement sur cloudfoundry
+Après compilation, dans le répertoire target/mobile-account
+
+vmc push mobile-account
+Would you like to deploy from the current directory? [Yn]: y 
+Application Deployed URL: 'mobile-account.cloudfoundry.com'? 
+[WARNING] Can't determine the Application Type.
+Select Application Type: (Lift, Erlang/OTP Rebar, Rails, Node, Grails, Sinatra, Spring, Roo or JavaWeb) Spring
+Selected Java SpringSource Spring Application
+Memory Reservation [Default:512M] (64M, 128M, 256M, 512M, 1G or 2G) 
+Creating Application: OK
+Would you like to bind any services to 'mobile-account'? [yN]: y
+The following system services are available:
+1. mongodb
+2. mysql
+3. postgresql
+4. rabbitmq
+5. redis
+Please select one you wish to provision: 2
+Specify the name of the service [mysql-1e152]: accountdb
+Creating Service: OK
+Binding Service: OK
+Uploading Application:
+  Checking for available resources: OK
+  Processing resources: OK
+  Packing application: OK
+  Uploading (11K): OK   
+Push Status: OK
+Staging Application: OK                                                         
+Starting Application: OK
+
+# Déploiement sur tomcat
+Déposer le war dans CATALINA_HOME/webapps/
+

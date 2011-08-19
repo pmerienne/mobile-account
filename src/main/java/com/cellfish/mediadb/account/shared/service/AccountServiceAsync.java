@@ -12,9 +12,9 @@ public interface AccountServiceAsync {
 
 	void validate(PaymentDTO payment, UserDTO user, AsyncCallback<Void> callback);
 
-	void addBill(BillDTO bill, AsyncCallback<Void> callback);
+	void save(BillDTO bill, AsyncCallback<Void> callback);
 
-	void addPayment(PaymentDTO payment, AsyncCallback<Void> callback);
+	void save(PaymentDTO payment, AsyncCallback<Void> callback);
 
 	void findPaymentByUser(UserDTO user, int page, int pageSize, AsyncCallback<List<PaymentDTO>> callback);
 

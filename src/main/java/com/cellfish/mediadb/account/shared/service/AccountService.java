@@ -15,7 +15,7 @@ import com.google.gwt.user.client.rpc.RemoteServiceRelativePath;
 public interface AccountService extends RemoteService {
 
 	@Secured("ROLE_USER")
-	void addBill(BillDTO bill);
+	void save(BillDTO bill);
 
 	@Secured("ROLE_USER")
 	List<BillDTO> findBillsByUser(UserDTO user, int page, int pageSize);
@@ -30,7 +30,7 @@ public interface AccountService extends RemoteService {
 	List<PaymentDTO> findPaymentToUser(UserDTO user, int page, int pageSize);
 
 	@Secured("ROLE_USER")
-	void addPayment(PaymentDTO payment);
+	void save(PaymentDTO payment);
 
 	@Secured("ROLE_USER")
 	Boolean isValidated(PaymentDTO payment);
