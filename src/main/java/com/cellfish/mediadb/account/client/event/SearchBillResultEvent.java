@@ -1,6 +1,6 @@
 package com.cellfish.mediadb.account.client.event;
 
-import com.cellfish.mediadb.account.client.model.SearchResult;
+import com.cellfish.mediadb.account.client.model.search.SearchResult;
 import com.cellfish.mediadb.account.shared.domain.BillDTO;
 import com.google.gwt.event.shared.GwtEvent;
 
@@ -20,7 +20,7 @@ public class SearchBillResultEvent extends GwtEvent<SearchBillResultHandler> {
 
 	@Override
 	protected void dispatch(SearchBillResultHandler handler) {
-		handler.onSearchBillResult(this);
+		handler.onSearchResult(this);
 	}
 
 	@Override

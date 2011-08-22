@@ -1,0 +1,27 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder" xmlns:jqm='urn:import:com.google.gwt.jquery.mobile.ui'
+	xmlns:g="urn:import:com.google.gwt.user.client.ui">
+	<ui:style>
+		.middle {
+			margin-left: auto;
+			margin-right: auto;
+			width: 250px
+		}
+		
+		.important {
+			font-weight: bold;
+		}
+	</ui:style>
+	<g:HTMLPanel>
+		<g:Label ui:field="searchMessage" text="Pas de recherche" />
+		<jqm:ListView ui:field="resultsList" shadow="true" visible="false" inset="true" roundingType="all"
+			rounded="true" />
+		<g:FlowPanel ui:field="pagination" visible="false" styleName="{style.middle}">
+			<g:Label ui:field="currentPage" styleName="{style.important}" />
+			<jqm:ControlGroup roundingType="all">
+				<jqm:Button ui:field="previousResultsButton" text="Previous" icon="arrow-l" iconPos="left" />
+				<jqm:Button ui:field="nextResultsButton" text="Next" icon="arrow-r" iconPos="right" />
+			</jqm:ControlGroup>
+		</g:FlowPanel>
+	</g:HTMLPanel>
+</ui:UiBinder> 

@@ -1,8 +1,6 @@
 package com.cellfish.mediadb.account.client.event;
 
-import com.cellfish.mediadb.account.client.model.Search;
-import com.cellfish.mediadb.account.shared.domain.BillDTO;
-import com.cellfish.mediadb.account.shared.domain.UserDTO;
+import com.cellfish.mediadb.account.client.model.search.BillSearch;
 import com.google.gwt.event.shared.GwtEvent;
 
 public class SearchBillEvent extends GwtEvent<SearchBillHandler> {
@@ -13,13 +11,10 @@ public class SearchBillEvent extends GwtEvent<SearchBillHandler> {
 		return TYPE != null ? TYPE : (TYPE = new Type<SearchBillHandler>());
 	}
 
-	private Search<BillDTO> search;
+	private BillSearch search;
 
-	private UserDTO user;
-
-	public SearchBillEvent(Search<BillDTO> search, UserDTO user) {
+	public SearchBillEvent(BillSearch search) {
 		this.search = search;
-		this.user = user;
 	}
 
 	@Override
@@ -32,11 +27,7 @@ public class SearchBillEvent extends GwtEvent<SearchBillHandler> {
 		return getType();
 	}
 
-	public UserDTO getUser() {
-		return user;
-	}
-
-	public Search<BillDTO> getSearch() {
+	public BillSearch getSearch() {
 		return search;
 	}
 

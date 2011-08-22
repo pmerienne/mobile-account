@@ -4,5 +4,5 @@ import com.google.gwt.event.shared.EventHandler;
 
 public interface SearchBillResultHandler extends EventHandler {
 
-	void onSearchBillResult(SearchBillResultEvent event);
+	void onSearchResult(SearchBillResultEvent event);
 }
